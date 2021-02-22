@@ -18,14 +18,14 @@
     --blue-twitter: #2aa9e0;
 }
 
-@media(max-width: 1080px)
+@media(max-width: 1080px) /* Caso o width seja ATÉ 1080px, vamos utilizar os seguintes valores */
 {
     html {
         font-size: 93.75%; /* Acessível e responsível. // As pessoas podem alterar seus font-size padrão, então utilizar em termos de percentuais é ótimo para globalizar o uso da responsividade. */
     }
 }
 
-@media(max-width: 720px)
+@media(max-width: 720px) /* Caso o width seja ATÉ 720px, vamos utilizar os seguintes valores */
 {
     html {
         font-size: 87.50%;
@@ -52,10 +52,9 @@ a {
 
 .container {
     height: 100vh;
-    max-width: 992px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-
+    max-width: 992px; /* Observação // Ao limitar o max-width, a barra de progresso também estará limitada.  */
+    margin: 0 auto; /* Dúvida // O que "auto" implicaria aqui? */
+    padding: 2.5rem 2rem; /* O uso de rem tornará relativo ao font-size, melhorando a responsividade */
     display: flex;
     flex-direction: column;
 }
@@ -63,15 +62,14 @@ a {
 .experience-bar {
     display: flex;
     align-items: center;
-
 }
 
 .experience-bar span {
     font-size: 1rem;
 }
 
-.experience-bar > div {
-    flex: 1;
+.experience-bar > div { /* Observação // Esse recurso ">" será utilizado apenas na div imediatamente dentro da classe .experience-bar, ou seja, não será recursivo para todas as divs internas. */
+    flex: 1; /* Dúvida // O que significa flex 1? */
     height: 4px;
     background: var(--gray-line);
     margin: 0 1.5rem;
@@ -85,7 +83,7 @@ a {
 }
 
 .experience-bar > div span.current-experience {
-    position: absolute;
+    position: absolute; /* Foi escolhido uma posição absolute por causa do deslocamento horizontal para centralizar a ancoração */
     top: 12px;
     transform: translateX(-50%);
 }
